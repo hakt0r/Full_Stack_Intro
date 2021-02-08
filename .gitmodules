@@ -1,0 +1,3 @@
+[submodule "01-Full_Stack_Package"]
+	path = 01-Full_Stack_Package
+	url = https://github.com/hakt0r/FullStack-Package
