@@ -6,7 +6,7 @@ import Pages    from './pages';
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-const graphLink = new HttpLink({ uri: 'http://localhost:3000/graphql' });
+const graphLink = new HttpLink({ uri: '/graphql' });
 
 const authLink = setContext(
   ( _, request ) => {
@@ -26,7 +26,6 @@ const client = new ApolloClient({
  ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <GlobalStyles/>
       <Pages/>
     </ApolloProvider>
   </React.StrictMode>,

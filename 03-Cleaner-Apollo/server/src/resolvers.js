@@ -6,7 +6,7 @@ module.exports = {
   Query: {
     userList: async ( parent, args, context ) => {
       if ( ! context.user ) throw new AuthenticationError();
-      if ( context.user.role !== 'user' ) throw new AuthenticationError();
+      // if ( context.user.role !== 'user' ) throw new AuthenticationError();
       return await Author.find({});
     },
     userFind:  async ( _, args ) => await Author.find({name:args.name}),
