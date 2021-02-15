@@ -38,7 +38,7 @@ switch ( command ){
             file => `<li/><a href="${file}">${file}</a>`
         ).join('\n')}
         </html>`;
-        fs.writeFileSync('index.html',html);
-        cp.spawn('rsync',['-avz','.','root@sz.hktr.de:/var/www/lfs/dci/fbw14/'],{stdio:'inherit'})
+        fs.writeFileSync('fullStack.html',html);
+        cp.spawn('rsync',['-avz','--partial','--progress','.','root@sz.hktr.de:/var/www/lfs/dci/fbw14/'],{stdio:'inherit'})
         
 }

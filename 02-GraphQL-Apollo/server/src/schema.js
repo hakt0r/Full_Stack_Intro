@@ -4,7 +4,7 @@ const typeDefs = gql`
 
 type Query {
   "Get tracks array for homepage grid"
-  tracksForHome: [Track!]!
+  tracksForHome: [Track!]
   sayHello: String
   userList: [Author!]!
   userFind(name:String): [Author!]!
@@ -12,7 +12,8 @@ type Query {
 }
 
 type Mutation {
-  createUser(name:String): Author
+  createUser( name:String!, password:String! ): Author!
+  loginUser( name:String!, password:String! ): Author!
 }
 
 "A track is a group of Modules that teaches about a specific topic"
@@ -37,6 +38,8 @@ type Author {
   name: String!
   "Author's profile picture url"
   photo: String
+  password: String!
+  token: String
 }
 
 `;

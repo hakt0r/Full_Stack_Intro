@@ -15,7 +15,9 @@ const connect = async () => {
 
 const AuthorSchema = new mongoose.Schema({
   name: String,
-  photo: String
+  photo: String,
+  password: String,
+  token: String
 });
 
 const Author = mongoose.model( 'Author', AuthorSchema );
