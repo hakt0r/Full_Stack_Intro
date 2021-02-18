@@ -12,6 +12,7 @@ type Query {
 type Mutation {
   createUser( name:String!, password:String! ): Author!
   loginUser( name:String!, password:String! ): Author!
+  updateTodo( id:ID! ): Todo!
 }
 
 type Author {
