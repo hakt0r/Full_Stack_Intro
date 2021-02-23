@@ -7,12 +7,12 @@ type Query {
   userList: [Author!]!
   userFind(name:String): [Author!]!
   userMatch(name:String): [Author!]!
+  helloWorld: String!
 }
 
 type Mutation {
   createUser( name:String!, password:String! ): Author!
   loginUser( name:String!, password:String! ): Author!
-  updateTodo( id:ID! ): Todo!
 }
 
 type Author {
