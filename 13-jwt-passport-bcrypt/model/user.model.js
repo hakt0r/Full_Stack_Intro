@@ -6,9 +6,13 @@ const   FACTOR = 10; // how hard to protect te password
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+  uuid:     { required: true, type: String, unique:true },
   name:     { required: true, type: String },
   password: { required: true, type: String },
-  deposit:  { default:  0,    type: Number }
+  deposit:  { default:  0,    type: Number },
+  provider: {
+    github: String
+  }
 });
 
 // Password1! => ads7a45sd47a5s4d7a6s5d75as436a5s34
@@ -32,7 +36,6 @@ UserSchema.pre( 'save', function(next) {
 
 UserSchema.methods.comparePassword = async function (candidatePassword) {
   return new Promise( ( resolve ) => {
-    console.log( candidatePassword, this.password );
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
       if (err) return resolve(false);
       resolve(isMatch);
