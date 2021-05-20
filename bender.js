@@ -8,6 +8,7 @@ const moment = require('moment');
 const config = {
   admin: {
     'anx#6421':{}
+    'Eko450#8002':{}
   },
   student:{
     "Micha#2764": {},
